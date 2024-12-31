@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NavbarStyle.css">
+    <link rel="stylesheet" href="HeroStyle.css">
+    <link rel="stylesheet" href="CategoryStyle.css">
+    <link rel="stylesheet" href="FooterStyle.css">
+    <title>Dobrodosao</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="web-name">Belgrade Bet</div>
+        <div class="links">
+            <a href="#categories" id="dynamic-link">Categories</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Welcome to Belgrade Bet</h1>
+        <a href="#categories" id="hero-link">Explore Categories</a>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories">
+        <h2>Categories</h2>
+        <div class="category-boxes">
+            <a href="Najbolji-predlozi-dana.html" class="category">Najbolji predlozi dana</a>
+            <a href="Sigurni-predlozi.html" class="category">Sigurni predlozi</a>
+            <a href="Single-igra.html" class="category">Single igra</a>
+            <a href="Dnevno-kvota-2.html" class="category">Dnevno kvota 2+</a>
+            <a href="Dnevno-kvota-10.html" class="category">Dnevno kvota 10+</a>
+            <a href="Vise-manje-predlozi.html" class="category">Vise-manje predlozi</a>
+            <a href="Top-5-predloga-dana.html" class="category">Top 5 predloga dana</a>
+            <a href="Kosarka.html" class="category">Kosarka</a>
+            <a href="Tenis.html" class="category">Tenis</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <h2>Website powered by Noctyrium</h2>
+        <br>
+        <a href="https://noctyrium.netlify.app" target="_blank">Visit Noctyrium</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="text-align: center;">BelgradeBet Links</h1>
+        <br>
+        <br>
+        <a href="https://instagram.com/belgrade_bet">Instagram</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        &copy; 2024 BelgradeBet. All Rights Reserved.
+        <br>
+        <br>
+    </footer>
+</body>
+<script>
+    import {isAllowed, setIsAllowed} from './Registration.js'
+
+    window.onload = function () {
+        if(!isAllowed) {
+            window.open('https://belgradebet.netlify.app')
+        }
+    }
+</script>
+<script src="Registration.js"></script>
+</html>

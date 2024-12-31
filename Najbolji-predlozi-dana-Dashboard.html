@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrolna Tabla</title>
+    <link rel="stylesheet" href="NavbarStyle.css">
+    <style>
+/* Global Styles */
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+/* Category Styles */
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.category {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7), 0px 8px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.category:hover {
+    box-shadow: 0px 8px 12px rgba(255, 215, 0, 0.8), 0px 16px 24px rgba(255, 215, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+.category h2 {
+    font-size: 1.6rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+input[type="file"] {
+    background-color: #333;
+    border: 2px solid #FFD700;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+.remove {
+    background-color: #ff4d4d;
+    color: #fff;
+    display: none;
+}
+
+.remove:hover {
+    background-color: #e60000;
+}
+
+/* Image container styles */
+#category1-img-container, #category2-img-container, #category3-img-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 10px;
+    }
+
+    .category {
+        padding: 15px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.6), 0px 6px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .category h2 {
+        font-size: 1.4rem;
+    }
+
+    input[type="file"], button {
+        font-size: 0.9rem;
+    }
+
+    img {
+        max-height: 120px;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 5px;
+    }
+
+    .category {
+        padding: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .category h2 {
+        font-size: 1.2rem;
+    }
+
+    input[type="file"], button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    img {
+        max-height: 100px;
+    }
+
+    .remove {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+/* Text Section Styles */
+.category textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    resize: none;
+}
+
+.save-text-btn,
+.remove-text-btn {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-text-btn:hover,
+.remove-text-btn:hover {
+    background-color: #e6b800;
+}
+
+.remove-text-btn {
+    background-color: #ff4d4d;
+    display: none;
+}
+
+.remove-text-btn:hover {
+    background-color: #e60000;
+}
+
+/* Mobile Responsiveness (Add to your existing media queries) */
+@media (max-width: 768px) {
+    .category textarea {
+        font-size: 0.9rem;
+    }
+
+    .save-text-btn,
+    .remove-text-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category textarea {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .save-text-btn,
+    .remove-text-btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="web-name">Belgrade Bet</div>
+        <div class="links">
+            <a href="Home.html" id="dynamic-link">Home</a>
+        </div>
+    </nav>
+
+    <h1>Admin Dashboard</h1>
+    <div class="dashboard">
+        <!-- Category 1 -->
+        <div class="container">
+            <div class="dashboard">
+                <div class="category" id="category1">
+                    <h2>Najbolji predlozi dana</h2>
+                    <div class="img-container">
+                        <img class="category-img" id="category1-img" src="" alt="Category 1 Image">
+                    </div>
+                    <input type="file" class="category-upload" id="category1-upload" accept="image/*">
+                    <button class="upload-btn" id="uploadBtn1">Upload Image</button>
+                    <button class="remove-btn" id="removeBtn1">Remove Image</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2 - Text Section -->
+    <div class="container">
+        <div class="dashboard">
+            <div class="category" id="categoryText">
+                <h2>Najbolji Predlozi Dana Text</h2>
+                <textarea class="category-text" id="categoryText-input" rows="4" placeholder="Enter your text here..."></textarea>
+                <button class="save-text-btn" id="saveTextBtn">Save Text</button>
+                <button class="remove-text-btn" id="removeTextBtn">Remove Text</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="Najboljipredlozidana.js"></script>
+    </div>
+
+    <script>
+        function uploadImage(category) {
+            const fileInput = document.getElementById(`${category}-upload`);
+            const imgContainer = document.getElementById(`${category}-img-container`);
+            const imgElement = document.getElementById(`${category}-img`);
+            const removeButton = document.querySelector(`#${category} .remove`);
+
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgElement.src = e.target.result; // Set the image source to the file
+                    imgElement.style.display = 'block'; // Show the image
+                    removeButton.style.display = 'inline-block'; // Show the remove button
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage(category) {
+            const imgElement = document.getElementById(`${category}-img`);
+            const removeButton = document.querySelector(`#${category} .remove`);
+            const fileInput = document.getElementById(`${category}-upload`);
+
+            imgElement.style.display = 'none'; // Hide the image
+            removeButton.style.display = 'none'; // Hide the remove button
+            fileInput.value = ''; // Clear the file input
+        }
+    </script>
+
+</body>
+</html>

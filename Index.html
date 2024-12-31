@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NavbarStyle.css">
+    <link rel="stylesheet" href="LoginStyle.css">
+    <link rel="stylesheet" href="FooterStyle.css">
+    <title>Uloguj Se</title>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="web-name">Belgrade Bet</div>
+    </nav>
+    <section id="login">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <br>
+                <br>
+                <button id="loginButton" type="submit">Submit</button>
+                <p id="error-message" style="color: red; margin-top: 10px;"></p>
+            </form>
+        </div>
+    </section>   
+    <!-- Footer Section -->
+<footer id="footer">
+    <br>
+    <br>
+    <p>Website powered by Noctyrium</p>
+    <br>
+    <br>
+    <a href="https://noctyrium.netlify.app" target="_blank">Visit Noctyrium</a>
+    <br>
+</footer> 
+</body>
+<script src="Registration.js"></script>
+</html>

@@ -1,0 +1,100 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(145deg, #121212, #0a0a0a);
+    color: #ffd700;
+    overflow: hidden;
+}
+
+/* Login Section */
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+/* Login Container */
+.login-container {
+    background: linear-gradient(145deg, #202020, #181818);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 
+        8px 8px 20px rgba(0, 0, 0, 0.7), 
+        -8px -8px 20px rgba(50, 50, 50, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transform: rotateX(10deg);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.login-container:hover {
+    transform: rotateX(0deg) translateY(-10px);
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.8), 
+        -12px -12px 24px rgba(50, 50, 50, 0.6);
+}
+
+/* Login Header */
+.login-container h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 6px gold;
+}
+
+/* Input Fields */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    background: #121212;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.7), 
+                inset -3px -3px 8px rgba(50, 50, 50, 0.5);
+    outline: none;
+    color: #ffd700;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.login-container input:focus {
+    box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 0.8), 
+                inset -5px -5px 12px rgba(50, 50, 50, 0.6);
+    transform: scale(1.02);
+}
+
+/* Submit Button */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(145deg, #ffd700, #ffc107);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.5), 
+        -4px -4px 8px rgba(50, 50, 50, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.6), 
+        -6px -6px 12px rgba(50, 50, 50, 0.4);
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+    font-size: 1em;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px black;
+}

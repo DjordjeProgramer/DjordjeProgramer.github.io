@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrolna Tabla</title>
+    <link rel="stylesheet" href="NavbarStyle.css">
+    <style>
+
+        h1{
+            text-align: center;
+        }
+/* Container for all categories */
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 categories per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual category box */
+.category {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Category heading style */
+.category h2 {
+    color: gold;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Button style */
+.category-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: gold;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button hover effect */
+.category-btn:hover {
+    background-color: gold;
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .categories-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 categories per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-container {
+        grid-template-columns: 1fr; /* 1 category per row */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div class="web-name">Belgrade Bet</div>
+        <div class="links">
+            <a href="Home.html" id="dynamic-link">Home</a>
+        </div>
+    </nav>
+
+    <h1>Admin Dashboard</h1>
+    <div class="dashboard">
+        <div class="categories-container">
+            <div class="category">
+                <h2>Najbolji predlozi dana</h2>
+                <a href="Najbolji-predlozi-dana-Dashboard.html" class="category-btn">Go to Najbolji predlozi dana</a>
+            </div>
+            <div class="category">
+                <h2>Sigurni predlozi</h2>
+                <a href="Sigurni-predlozi-Dashboard.html" class="category-btn">Go to Sigurni predlozi</a>
+            </div>
+            <div class="category">
+                <h2>Single igra</h2>
+                <a href="Single-igra-Dashboard.html" class="category-btn">Go to Single igra</a>
+            </div>
+            <div class="category">
+                <h2>Dnevno kvota 2+</h2>
+                <a href="Dnevno-kvota-2-Dashboard.html" class="category-btn">Go to Dnevno kvota 2+</a>
+            </div>
+            <div class="category">
+                <h2>Dnevno kvota 10+</h2>
+                <a href="Dnevno-kvota-10-Dashboard.html" class="category-btn">Go to Dnevno kvota 10+</a>
+            </div>
+            <div class="category">
+                <h2>Vise-manje predlozi</h2>
+                <a href="Vise-manje-predlozi-Dashboard.html" class="category-btn">Go to Vise-manje predlozi</a>
+            </div>
+            <div class="category">
+                <h2>Top 5 predloga dana</h2>
+                <a href="Top-5-predloga-dana-Dashboard.html" class="category-btn">Go to Top 5 predloga dana</a>
+            </div>
+            <div class="category">
+                <h2>Kosarka</h2>
+                <a href="Kosarka-Dashboard.html" class="category-btn">Go to Kosarka</a>
+            </div>
+            <div class="category">
+                <h2>Tenis</h2>
+                <a href="Tenis-Dashboard.html" class="category-btn">Go to Tenis</a>
+            </div>
+        </div>        
+    </div>
+
+    <script>
+        function uploadImage(category) {
+            const fileInput = document.getElementById(`${category}-upload`);
+            const imgContainer = document.getElementById(`${category}-img-container`);
+            const imgElement = document.getElementById(`${category}-img`);
+            const removeButton = document.querySelector(`#${category} .remove`);
+
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgElement.src = e.target.result; // Set the image source to the file
+                    imgElement.style.display = 'block'; // Show the image
+                    removeButton.style.display = 'inline-block'; // Show the remove button
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage(category) {
+            const imgElement = document.getElementById(`${category}-img`);
+            const removeButton = document.querySelector(`#${category} .remove`);
+            const fileInput = document.getElementById(`${category}-upload`);
+
+            imgElement.style.display = 'none'; // Hide the image
+            removeButton.style.display = 'none'; // Hide the remove button
+            fileInput.value = ''; // Clear the file input
+        }
+    </script>
+
+</body>
+</html>

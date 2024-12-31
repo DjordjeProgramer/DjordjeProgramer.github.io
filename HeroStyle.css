@@ -1,0 +1,41 @@
+#hero {
+    text-align: center;
+    color: gold;
+    perspective: 1000px;
+    background-color: black;
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    transform: translateZ(50px);
+    transition: transform 0.3s;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+#hero:hover h1 {
+    transform: translateZ(70px) rotateY(5deg);
+    color: #FFD700; /* bright gold color */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+#hero #hero-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgba(255, 215, 0, 0.2); /* gold with slight transparency */
+    color: gold;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s, transform 0.3s;
+    transform: translateZ(30px);
+    border: 2px solid gold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#hero #hero-link:hover {
+    background: rgba(255, 215, 0, 0.5);
+    transform: translateZ(40px) scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+    color: black;
+}
